@@ -2,7 +2,7 @@
 
 # Baseline B
 ## Bộ dữ liệu
-Baseline B: [OASIS-1 Github](https://github.com/14thibea/OASIS-1_dataset)
+Link: [OASIS-1 Github](https://github.com/14thibea/OASIS-1_dataset)
 ## Xử lý dữ liệu (mô phỏng cách bác sĩ quan sát MRI)
 ### Lấy mẫu 
 Lấy mẫu lát cắt MRI với ưu tiên vùng hippocampus (hải mã) - vùng não quan trọng để phát hiện Alzheimer.
