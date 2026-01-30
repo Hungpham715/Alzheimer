@@ -1,6 +1,5 @@
 # Báo cáo 
 
-# Baseline B
 ## Bộ dữ liệu
 Link: [MRI 3D Scan](https://www.kaggle.com/datasets/muhammadzahraan/3d-mri-scans-for-alzheimer-disease/data)
 
@@ -53,23 +52,24 @@ Phân loại: Vector đại diện này được đưa qua lớp linear để d�
 - Alzheimer (AD).
 - Không Alzheimer (non-AD/CN).
 
-## Đánh giá mô hình
-- Accuracy: 0.75
-- Precision: 0.71
-- Recall: 0.8
-- F1 score: 0.75
+## Đánh giá 
+- Accuracy: 0.72
+- Precision: 0.93
+- Recall: 0.41
+- F1 score: 0.57
 - Confusion matrix:
 
-            [12] [5]
+            [39] [1]
             
-            [3] [12]
-
+            [20] [14]
+- AUC: 0.89
+  
 ## Dự đoán và giải thích
-Ví dụ: ID bệnh nhân: sub-OASIS10137
-- Dự đoán: AD với xác suất 0.87 -> Dự đoán đúng
+Ví dụ: ID bệnh nhân: 031_S_0618
+- Dự đoán: CN (xác suất P(AD) = 0.36) -> Dự đoán đúng
 - Giải thích (top 5): 
-  + Top 1: view=sagittal, slice_idx=35, attention=0.0395 (slice_idx là chỉ số của 48 lát cắt 2D)
-  + Top 2: view=sagittal, slice_idx=37, attention=0.0380
-  + Top 3: view=sagittal, slice_idx=34, attention=0.0367
-  + Top 4: view=coronal, slice_idx=28, attention=0.0350
-  + Top 5: view=sagittal, slice_idx=38, attention=0.0300
+  + Top 1: view=axial, slice_idx=1, attention=0.0332 (slice_idx là chỉ số của 48 lát cắt 2D)
+  + Top 2: view=coronal, slice_idx=20, attention=0.0317
+  + Top 3: view=axial, slice_idx=2, attention=0.0310
+  + Top 4: view=axial, slice_idx=12, attention=0.0275
+  + Top 5: view=sagittal, slice_idx=37, attention=0.0268
