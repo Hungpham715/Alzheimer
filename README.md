@@ -2,13 +2,20 @@
 
 # Baseline B
 ## Bộ dữ liệu
-Link: [OASIS-1 Github](https://github.com/14thibea/OASIS-1_dataset)
+Link: [MRI 3D Scan](https://www.kaggle.com/datasets/muhammadzahraan/3d-mri-scans-for-alzheimer-disease/data)
+
+## Tổng quan dữ liệu 
+Dữ liệu gồm 366 bệnh nhân (chỉ lấy mỗi file đầu tiên của mỗi bệnh nhân), chia 60/20/20
+- Train: 219 bệnh nhân. Trong đó:  AD: 99, CN: 120
+- Validation: 73 bệnh nhân. Trong đó: AD: 33, CN: 40 
+- Test: 74 bệnh nhân. Trong đó: AD: 34, CN: 40
+  
 ## Xử lý dữ liệu (mô phỏng cách bác sĩ quan sát MRI)
 ### Lấy mẫu 
 Lấy mẫu lát cắt MRI với ưu tiên vùng hippocampus (hải mã) - vùng não quan trọng để phát hiện Alzheimer.
 
 Cách thức:
-- Loại bỏ phần không quan trọng: Bỏ 20% đầu (cổ) và 20% cuối (cằm).
+- Loại bỏ phần không quan trọng: Bỏ 10% đầu (cổ) và 90% cuối (cằm).
 - Xác định vùng hippocampus: Nằm ở khoảng 45% chiều cao não, chiếm 20% diện tích.
 
 → Kết quả: Tập k slices ưu tiên hippocampus nhưng vẫn giữ context tổng thể của não.
@@ -25,10 +32,6 @@ Chuẩn hóa lát cắt MRI 2D trước khi đưa vào mô hình:
 → Kết quả: ảnh đầu vào gọn gàng, cùng kích thước, tập trung vào não, giúp mô hình học ổn định và hiệu quả hơn.
 
 ## Mô hình (ResNet Pretrained + Slice Attention)
-Dữ liệu gồm N bệnh nhân, chia thành:
-- Train: a bệnh nhân.
-- Validation: b bệnh nhân.
-
 Quá trình huấn luyện diễn ra theo epoch: Trong mỗi epoch, mô hình học lần lượt trên toàn bộ bệnh nhân trong tập train theo batch.
 
 Biểu diễn bệnh nhân
