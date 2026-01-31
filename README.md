@@ -55,8 +55,8 @@ Phân loại: Vector đại diện này được đưa qua lớp linear để d�
 ## Đánh giá 
 - Accuracy: 0.72
 - Precision: 0.93
-- Recall: 0.41
-- F1 score: 0.57
+- Recall: 0.51
+- F1 score: 
 - Confusion matrix:
 
             [39] [1]
